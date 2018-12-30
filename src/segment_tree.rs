@@ -1,7 +1,6 @@
-
 #[derive(Debug, Clone)]
 pub struct SegmentTree<'s> {
-    pub segments: Vec<Segment<'s>>
+    pub segments: Vec<Segment<'s>>,
 }
 
 #[derive(Debug, Clone)]
@@ -17,10 +16,10 @@ pub enum Segment<'s> {
         contents: SegmentTree<'s>,
     },
     Variable {
-        name: SegmentTree<'s>
+        name: SegmentTree<'s>,
     },
     With {
         assignments: Vec<(SegmentTree<'s>, SegmentTree<'s>)>,
         contents: SegmentTree<'s>,
-    }
+    },
 }

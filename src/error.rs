@@ -18,9 +18,13 @@ impl fmt::Debug for Error {
             Error::MissingTerminal(terminal) => write!(f, "A {:?} is missing", terminal),
             Error::UnknownBlock(name) => write!(f, "Unknown block {:?}", name),
             Error::NoSuchVariable(name) => write!(f, "No variable called {:?} in scope", name),
-            Error::ShouldBeInteger(name) => write!(f, "Expected an integer, but got {:?} instead", name),
+            Error::ShouldBeInteger(name) => {
+                write!(f, "Expected an integer, but got {:?} instead", name)
+            }
             Error::NoAssignmentInWith => write!(f, "Expected an equal sign in with block"),
-            Error::TooManyAssignmentsInWith => write!(f, "Expected only one equal sign in with block"),
+            Error::TooManyAssignmentsInWith => {
+                write!(f, "Expected only one equal sign in with block")
+            }
         }
     }
 }
