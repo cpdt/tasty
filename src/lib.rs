@@ -11,7 +11,7 @@ use crate::error::Result;
 use crate::parser::parse_template;
 use crate::resolver::resolve_tree;
 
-pub fn process_template<'s>(f: &mut impl fmt::Write, template_text: &str, context: impl Into<HashMap<Cow<'s, str>, Cow<'s, str>>>) -> Result<()> {
+pub fn process_template<'s>(f: &mut dyn fmt::Write, template_text: &str, context: impl Into<HashMap<Cow<'s, str>, Cow<'s, str>>>) -> Result<()> {
     let parsed_tree = parse_template(template_text)?;
     resolve_tree(f, &parsed_tree, &context.into())
 }

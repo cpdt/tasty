@@ -13,7 +13,7 @@ fn is_truthy(val: &str) -> bool {
     !val.is_empty() && val != "0"
 }
 
-fn resolve_segment(f: &mut impl fmt::Write, segment: &Segment, context: &HashMap<Cow<str>, Cow<str>>) -> Result<()> {
+fn resolve_segment(f: &mut dyn fmt::Write, segment: &Segment, context: &HashMap<Cow<str>, Cow<str>>) -> Result<()> {
     match segment {
         Segment::Text(text) => {
             err(f.write_str(text))
@@ -66,7 +66,7 @@ fn resolve_segment(f: &mut impl fmt::Write, segment: &Segment, context: &HashMap
     }
 }
 
-pub fn resolve_tree(f: &mut impl fmt::Write, tree: &SegmentTree, context: &HashMap<Cow<str>, Cow<str>>) -> Result<()> {
+pub fn resolve_tree(f: &mut dyn fmt::Write, tree: &SegmentTree, context: &HashMap<Cow<str>, Cow<str>>) -> Result<()> {
     for segment in &tree.segments {
         resolve_segment(f, segment, context)?;
     }
