@@ -7,7 +7,7 @@ mod parser;
 mod resolver;
 mod segment_tree;
 
-use crate::error::Result;
+pub use crate::error::{Result, Error};
 use crate::parser::parse_template;
 use crate::resolver::resolve_tree;
 
