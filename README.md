@@ -100,7 +100,7 @@ And that's literally it! You can do a lot with these primitives, and even more b
  - Proper documentation
  - Tests
  - Ability to put in a `{{` or `{%` without it being interpreted as the start of some statement (i.e escaping it)
- - Cleaner code (everything's just a quickly written hack at the moment, but it works ¯\_(ツ)_/¯)
+ - Cleaner code (everything's just a quickly written hack at the moment, but it works ¯\\_(ツ)_/¯)
  - Put it on crates.io
 
 ### License
